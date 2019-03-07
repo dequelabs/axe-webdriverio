@@ -1,7 +1,7 @@
 {
   "name": "axe-webdriverio",
   "description": "Wraps the Axe-WebDriverJS project with bindings for WebDriverIO",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "license": "MIT",
   "main": "src/index.js",
   "types": "./src/index.d.ts",
