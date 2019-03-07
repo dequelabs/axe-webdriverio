@@ -2,7 +2,7 @@
 
 [![npm version](https://badge.fury.io/js/axe-webdriverio.svg)](https://badge.fury.io/js/axe-webdriverio)
 
-Makes WebDriver IO compatible with the [axe-webdriverjs](https://github.com/dequelabs/axe-webdriverjs) package. There are four WebDriver functions that `axe-webdriverjs` uses, which need to be rebound for WebDriverIO.
+Makes WebDriver IO compatible with the [axe-webdriverjs](https://github.com/dequelabs/axe-webdriverjs) package. There are four WebDriver functions that `axe-webdriverjs` uses, which need to be re-bound for WebDriverIO.
 
 - `executeScript`
 - `executeAsyncScript`
@@ -17,18 +17,28 @@ This package creates bindings for all of them.
 
 ```javascript
 var AxeWebDriverIOBuilder = require("axe-webdriverio");
-var WebDriver = require("selenium-webdriver");
+const { remote } = require("webdriverio");
 
-var driver = new WebDriver.Builder().forBrowser("firefox").build();
+(async () => {
+  const browser = await remote({
+    logLevel: "error",
+    path: "/",
+    capabilities: {
+      browserName: "firefox"
+    }
+  });
 
-driver.get("https://dequeuniversity.com/demo/mars/").then(function() {
-  AxeWebDriverIOBuilder(driver).analyze(function(err, results) {
+  await browser.url("https://dequeuniversity.com/demo/mars/");
+
+  AxeWebDriverIOBuilder(browser).analyze(function(err, results) {
     if (err) {
       // Handle error somehow
     }
     console.log(results);
   });
-});
+
+  await browser.deleteSession();
+})().catch(e => console.error(e));
 ```
 
 View the [axe-webdriverjs](https://github.com/dequelabs/axe-webdriverjs) documentation for more details.
