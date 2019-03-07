@@ -40,8 +40,7 @@
   },
   "devDependencies": {
     "axe-webdriverjs": "^2.1.0",
-    "jest": "^24.3.0",
-    "webdriverio": "^5.7.1"
+    "jest": "^24.3.0"
   },
   "dependencies": {
     "@types/axe-webdriverjs": "^2.0.0"
