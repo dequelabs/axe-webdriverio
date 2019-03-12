@@ -31,7 +31,9 @@
   "peerDependencies": {
     "webdriverio": ">= 4.10.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "@types/axe-webdriverjs": "^2.0.0"
+  },
   "dependencies": {
     "axe-webdriverjs": "^1.2.1"
   },
