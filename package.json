@@ -39,7 +39,7 @@
     "webdriverio": ">= 4.10.0"
   },
   "dependencies": {
-    "axe-webdriverjs": "^1.2.1"
+    "axe-webdriverjs": "^2.3.0"
   },
   "optionalDependencies": {
     "@types/axe-webdriverjs": "^2.0.0"
